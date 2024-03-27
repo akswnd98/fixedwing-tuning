@@ -1,7 +1,7 @@
 import ctypes
 
 class IBusSender:
-  NUM_OF_TUNINGS = 15
+  NUM_OF_TUNINGS = 16
 
   def __init__ (self, ser):
     self.ser = ser

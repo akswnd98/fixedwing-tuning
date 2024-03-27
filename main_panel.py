@@ -12,6 +12,7 @@ from tuning_slider_boxes.w_z_ff_slider_box import WZFFSliderBox
 from tuning_slider_boxes.w_z_error_p_slider_box import WZErrorPSliderBox
 from tuning_slider_boxes.w_z_error_i_slider_box import WZErrorISliderBox
 from tuning_slider_boxes.servo_offset_slider_boxes import Servo1OffsetSliderBox, Servo2OffsetSliderBox, Servo3OffsetSliderBox, Servo4OffsetSliderBox
+from tuning_slider_boxes.cruise_speed_slider_box import CruiseSpeedSliderBox
 
 class MainPanel (QWidget):
   def __init__ (self):
@@ -28,9 +29,12 @@ class MainPanel (QWidget):
     self.layout.addWidget(WZFFSliderBox())
     self.layout.addWidget(WZErrorPSliderBox())
     self.layout.addWidget(WZErrorISliderBox())
-    
+
     self.layout.addWidget(Servo1OffsetSliderBox())
     self.layout.addWidget(Servo2OffsetSliderBox())
     self.layout.addWidget(Servo3OffsetSliderBox())
     self.layout.addWidget(Servo4OffsetSliderBox())
+
+    self.layout.addWidget(CruiseSpeedSliderBox())
+
     self.setLayout(self.layout)

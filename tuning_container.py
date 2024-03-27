@@ -1,5 +1,5 @@
 class TuningContainer:
-  NUM_OF_TUNINGS = 15
+  NUM_OF_TUNINGS = 16
 
   PHI_ERROR_P_GAIN_FS = 100
   W_X_FF_GAIN_FS = 500
@@ -15,18 +15,20 @@ class TuningContainer:
   W_Z_ERROR_P_GAIN_FS = 200
   W_Z_ERROR_I_GAIN_FS = 100
 
+  CRUISE_SPEED_FS = 50
+
   tunings = [
-    1 * 2000 // PHI_ERROR_P_GAIN_FS,
-    100 * 2000 // W_X_FF_GAIN_FS,
-    0 * 2000 // W_X_ERROR_P_GAIN_FS,
-    0 * 2000 // W_X_ERROR_I_GAIN_FS,
+    1 * (2000 // PHI_ERROR_P_GAIN_FS),
+    100 * (2000 // W_X_FF_GAIN_FS),
+    0 * (2000 // W_X_ERROR_P_GAIN_FS),
+    0 * (2000 // W_X_ERROR_I_GAIN_FS),
 
-    1 * 2000 // THETA_ERROR_P_GAIN_FS,
-    100 * 2000 // W_Y_FF_GAIN_FS,
-    0 * 2000 // W_Y_ERROR_P_GAIN_FS,
-    0 * 2000 // W_Y_ERROR_I_GAIN_FS,
+    1 * (2000 // THETA_ERROR_P_GAIN_FS),
+    100 * (2000 // W_Y_FF_GAIN_FS),
+    0 * (2000 // W_Y_ERROR_P_GAIN_FS),
+    0 * (2000 // W_Y_ERROR_I_GAIN_FS),
 
-    100 * 2000 // W_Z_FF_GAIN_FS,
-    0 * 2000 // W_Z_ERROR_P_GAIN_FS,
-    0 * 2000 // W_Z_ERROR_I_GAIN_FS
-  ] + [100] * 4
+    100 * (2000 // W_Z_FF_GAIN_FS),
+    0 * (2000 // W_Z_ERROR_P_GAIN_FS),
+    0 * (2000 // W_Z_ERROR_I_GAIN_FS)
+  ] + ([100] * 4) + [20 * (2000 // CRUISE_SPEED_FS)]
