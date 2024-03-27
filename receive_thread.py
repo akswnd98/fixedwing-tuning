@@ -4,7 +4,7 @@ import threading
 from settings_container import SettingsContainer
 from send_request_container import SendRequestContainer
 from ibus_sender_container import IBusSenderContainer
-from gain_container import GainContainer
+from tuning_container import TuningContainer
 from time import sleep
 from serial_container import SerialContainer
 

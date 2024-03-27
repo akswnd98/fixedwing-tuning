@@ -4,16 +4,17 @@ from PySide6.QtCore import QSize
 
 MAX_VALUE = 2000
 
-class GainSliderBox (QWidget):
-  def __init__ (self, label_text):
+class TuningSliderBox (QWidget):
+  def __init__ (self, label_text, initial_value):
     super().__init__()
     self.setFixedWidth(80)
     self.setFixedHeight(400)
     self.label = QLabel(label_text)
     layout = QVBoxLayout(self)
-    self.slider = GainSlider()
+    self.slider = TuningSlider()
+    self.slider.setValue(initial_value)
     self.slider.valueChanged.connect(self.handle_slider_changed)
-    self.line_edit = QLineEdit('0', validator=QIntValidator(0, MAX_VALUE))
+    self.line_edit = QLineEdit(str(initial_value), validator=QIntValidator(0, MAX_VALUE))
     self.line_edit.returnPressed.connect(self.handle_text_changed)
     layout.addWidget(self.label)
     layout.addWidget(self.slider)
@@ -29,7 +30,7 @@ class GainSliderBox (QWidget):
   def get_value (self):
     return self.slider.get_value()
 
-class GainSlider (QSlider):
+class TuningSlider (QSlider):
   def __init__ (self):
     super().__init__()
     self.setRange(0, MAX_VALUE)
